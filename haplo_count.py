@@ -20,6 +20,7 @@ def main():
         for line in f:
             temp = line.strip().split()
             cpg = temp[4]
+            if 'N' in cpg: continue
             pos = temp[6].split(',')
             chr = temp[0]
             if len(cpg)<lookup_num:

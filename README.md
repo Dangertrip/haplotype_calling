@@ -1,3 +1,28 @@
+Haplotype:
+
+A.
+haplotype.py:  generate haplotype for every read
+python haplotype.py cpgfile bamfile
+For example:
+python haplotype.py /data/yyin/data/ref/cpg/mm10_cpg.bed SRR5008982.test.bam
+
+B.
+(Optional: if samples are pairend) python pairend.py haplotype_file
+WARNING:
+1. This step will generate 2 temp file for each process. It takes large portion of disk space.
+2. Please do not run this in parallel unless you have huge amount of memory.
+
+C.
+haplo_count.py: combine adjacent cpgs
+python haplo_count.py haplotype_file combine_num
+For example:
+python haplo_count.py SRR5008982.test.bam.status 3
+
+
+
+Haplotype distance matrix:
+
+
 C++ compile: g++ -o statusToMatrix_simple -I/data/yyin/data/software/anaconda3/include/ statusToMatrix_simple.cpp
 
 Update 12/21/2020:
